@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 434, y: 121, z: 434, w: 121}
+  spriteBorder: {x: 434, y: 121, z: 434, w: 120}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,12 +113,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Generated Image February 05, 2026 - 2_28PM_0
+      name: Grid_0
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 120
+        width: 540
+        height: 528
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007db6e859810be4c8ae148cf982337c
+      internalID: -766730266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grid_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1376
+        width: 1408
         height: 768
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -126,10 +148,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 18844421a6a3ebde0800000000000000
-      internalID: -1315549813898196863
+      spriteID: 234f82f463b999d49b28c4f444547ee5
+      internalID: -1160075147
       vertices: []
       indices: 
       edges: []
@@ -150,9 +172,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Generated Image February 05, 2026 - 2_28PM_0: -1315549813898196863
+      Grid_0: -766730266
+      Grid_1: -1160075147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
