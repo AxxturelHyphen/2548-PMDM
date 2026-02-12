@@ -24,7 +24,10 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            
+
+            // Asegurar que solo hay un Audio Listener
+            EnsureSingleAudioListener();
+
             // Cargar el estado del audio guardado
             isMuted = PlayerPrefs.GetInt("AudioMuted", 0) == 1;
             ApplyMuteState();
@@ -32,6 +35,27 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void EnsureSingleAudioListener()
+    {
+        AudioListener[] listeners = FindObjectsOfType<AudioListener>();
+
+        // Si no hay Audio Listener en el AudioManager, añadirlo
+        AudioListener ourListener = GetComponent<AudioListener>();
+        if (ourListener == null)
+        {
+            ourListener = gameObject.AddComponent<AudioListener>();
+        }
+
+        // Destruir todos los demás Audio Listeners
+        foreach (AudioListener listener in listeners)
+        {
+            if (listener != ourListener)
+            {
+                Destroy(listener);
+            }
         }
     }
 

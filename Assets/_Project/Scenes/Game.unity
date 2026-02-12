@@ -1574,6 +1574,7 @@ GameObject:
   - component: {fileID: 1169050651}
   - component: {fileID: 1169050650}
   - component: {fileID: 1169050652}
+  - component: {fileID: 1169050653}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1675,6 +1676,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreUI
   scoreText: {fileID: 662364728}
+--- !u!114 &1169050653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169050646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8ed86407b26514a8e0e65fe8294919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
 --- !u!1 &1191584369
 GameObject:
   m_ObjectHideFlags: 0

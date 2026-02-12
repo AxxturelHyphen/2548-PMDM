@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour
     private BoardView view;
     private PowerupManager powerupManager;
     private ScoreUI scoreUI;
+    private SceneController sceneController => SceneController.Instance;
     private GameInputs inputs;
     private bool canMove = true;
 
@@ -42,7 +43,6 @@ public class InputController : MonoBehaviour
             enabled = false;
             return;
         }
-
         // Inicializar el PowerupManager si existe
         if (powerupManager != null)
         {
@@ -109,11 +109,33 @@ public class InputController : MonoBehaviour
 
             Invoke(nameof(EnableMove), view.animationDuration);
 
+            // Verificar Game Over después de renderizar
             if (model.IsGameOver())
             {
-                Debug.Log("GAME OVER! Score: " + model.Score);
+                // Deshabilitar input permanentemente
+                inputs.Disable();
+
+                // Verificar que SceneController existe antes de cargar escena
+                if (sceneController != null)
+                {
+                    // Esperar a que termine la animación antes de cambiar escena
+                    StartCoroutine(LoadGameOverAfterDelay(view.animationDuration + 0.5f));
+                }
+                else
+                {
+                    Debug.LogError("SceneController no encontrado! No se puede cargar GameOver.");
+                }
             }
         }
+    }
+
+    private System.Collections.IEnumerator LoadGameOverAfterDelay(float delay)
+    {
+        // Esperar el tiempo especificado
+        yield return new WaitForSeconds(delay); 
+
+        // Cargar la escena GameOver con la puntuación final
+        sceneController.LoadGameOver(model.Score);
     }
 
     private void EnableMove()
