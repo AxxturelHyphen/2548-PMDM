@@ -274,9 +274,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 16d554ffc94c8644689dc6d312f86653, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.881
-  m_Pitch: 0
+  m_PlayOnAwake: 1
+  m_Volume: 0.208
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -287,9 +287,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 1
-  BypassListenerEffects: 1
-  BypassReverbZones: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -778,6 +778,7 @@ GameObject:
   - component: {fileID: 662364727}
   - component: {fileID: 662364729}
   - component: {fileID: 662364728}
+  - component: {fileID: 662364730}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -903,6 +904,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662364726}
   m_CullTransparentMesh: 1
+--- !u!114 &662364730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662364726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1da00495ac121146a88a61d6a8cc438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreUI
+  scoreText: {fileID: 662364728}
 --- !u!1 &761941823
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,8 +952,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 153.7}
-  m_SizeDelta: {x: 231.8069, y: 55.3012}
+  m_AnchoredPosition: {x: 0, y: 175.9}
+  m_SizeDelta: {x: 337, y: 55.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761941825
 MonoBehaviour:
@@ -963,8 +977,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: POWER-UPS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f93d14ae8bc4e834cb60768e915ddee2, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: f93d14ae8bc4e834cb60768e915ddee2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -972,37 +986,37 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+    bottomLeft: {r: 0.9716981, g: 0.47209862, b: 0.47209862, a: 1}
+    bottomRight: {r: 0, g: 0, b: 0, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 97690656
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.82
-  m_fontSizeBase: 23.82
+  m_fontSize: 24.65
+  m_fontSizeBase: 24.65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 8
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_characterSpacing: 1.6
+  m_wordSpacing: 0.33
+  m_lineSpacing: 5.89
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 1.65
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -1193,7 +1207,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: b29eab354d195cb45af16fed35a31300, type: 3}
+  m_Resource: {fileID: 8300000, guid: 37d72fd86b432524eaf66951eb76afd8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.103
   m_Pitch: 1
@@ -1559,6 +1573,7 @@ GameObject:
   - component: {fileID: 1169050649}
   - component: {fileID: 1169050651}
   - component: {fileID: 1169050650}
+  - component: {fileID: 1169050652}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1647,6 +1662,19 @@ MonoBehaviour:
   maxUndos: 3
   maxHammers: 3
   maxShuffles: 2
+--- !u!114 &1169050652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169050646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1da00495ac121146a88a61d6a8cc438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreUI
+  scoreText: {fileID: 662364728}
 --- !u!1 &1191584369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,8 +1790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 385.39868, y: 5.80072}
-  m_SizeDelta: {x: 286.7158, y: -308.1776}
+  m_AnchoredPosition: {x: 322.6861, y: 15.44873}
+  m_SizeDelta: {x: 412.1408, y: -327.4738}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243675924
 MonoBehaviour:
@@ -1777,15 +1805,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2100000, guid: 8de91330a48c540279c3bc6e3aff2b4d, type: 2}
-  m_Color: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4156863, g: 0.3529412, b: 0.8039216, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1315549813898196863, guid: 6fb37b166ec6cde449678c718ca4191e, type: 3}
+  m_Sprite: {fileID: -6129717656791325004, guid: bfefcd2ef6774234fa822224ba1da41a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2933,11 +2961,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 779944778}
   sfxSource: {fileID: 527753260}
-  backgroundMusic: {fileID: 8300000, guid: b29eab354d195cb45af16fed35a31300, type: 3}
-  moveSound: {fileID: 0}
-  mergeSound: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: 37d72fd86b432524eaf66951eb76afd8, type: 3}
+  moveSound: {fileID: 8300000, guid: 16d554ffc94c8644689dc6d312f86653, type: 3}
+  mergeSound: {fileID: 8300000, guid: 16d554ffc94c8644689dc6d312f86653, type: 3}
   powerupSound: {fileID: 8300000, guid: 16d554ffc94c8644689dc6d312f86653, type: 3}
-  gameOverSound: {fileID: 0}
+  gameOverSound: {fileID: 8300000, guid: 16d554ffc94c8644689dc6d312f86653, type: 3}
 --- !u!4 &2117714106
 Transform:
   m_ObjectHideFlags: 0

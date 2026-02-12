@@ -6,6 +6,7 @@ public class InputController : MonoBehaviour
     private BoardModel model;
     private BoardView view;
     private PowerupManager powerupManager;
+    private ScoreUI scoreUI;
     private GameInputs inputs;
     private bool canMove = true;
 
@@ -33,6 +34,7 @@ public class InputController : MonoBehaviour
         model = new BoardModel();
         view = GetComponent<BoardView>();
         powerupManager = GetComponent<PowerupManager>();
+        scoreUI = GetComponent<ScoreUI>();
 
         if (view == null)
         {
@@ -49,6 +51,16 @@ public class InputController : MonoBehaviour
         else
         {
             Debug.LogWarning("PowerupManager not found!");
+        }
+
+        // Inicializar el ScoreUI si existe
+        if (scoreUI != null)
+        {
+            scoreUI.Initialize(model);
+        }
+        else
+        {
+            Debug.LogWarning("ScoreUI not found!");
         }
 
         view.Render(model);

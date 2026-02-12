@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 
 public class BoardModel
 {
     private int[,] grid;
     private int score;
+
+    // Evento que se dispara cuando el score cambia
+    public Action<int> OnScoreChanged;
     
     // Secuencia de Fibonacci hasta 2584
     private static readonly Dictionary<int, int> fibonacciSequence = new Dictionary<int, int>
@@ -58,6 +62,7 @@ public class BoardModel
     public void AddScore(int points)
     {
         score += points;
+        OnScoreChanged?.Invoke(score);
     }
 
     // Obtener el valor en una posición específica
@@ -101,10 +106,11 @@ public class BoardModel
                 grid[row, col] = 0;
             }
         }
-        
+
         // Reiniciar el score
         score = 0;
-        
+        OnScoreChanged?.Invoke(score);
+
         // Generar dos fichas iniciales
         SpawnNewTile();
         SpawnNewTile();
